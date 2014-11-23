@@ -1,3 +1,16 @@
+Description
+-----------
+
+This is the course programming assignment for the Coursera course Getting and Cleaning
+Data offered in November, 2014.  The project starts with raw data files corres-
+ponding to measurements taken from a Galaxy S telephone measuring movements of 30 sub-
+jects engaged in one of 6 activities.  The project is to take these files and create
+one simplified tidy data set using techniques of merging and reshaping that we have
+learned.  The output is two tables, one with a subset of the raw data, but with the
+subjects and activities merged into the data set along with more descriptive column
+names; and one with one row for each subject/activity combo and the average for each of
+the variables in the first table.
+
 Instructions to Use the R Code
 ------------------------------
 
@@ -5,38 +18,41 @@ Instructions to Use the R Code
 
 https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip
 
-Store the corresponding zip file whereever you like.  We will refer to the directory where you have
-saved the zip files as the $BASE directory.
+Store the corresponding zip file whereever you like.  We will refer to the directory where 
+you have saved the zip files as the $BASE directory.
 
-2. Unzip the dataset zip file.  Be sure to allow it to unzip all of the files in the $BASE directory, and
-be sure to set the Path mode to "Full pathnames" to preserve the directory structure of the zip file.
+2. Unzip the dataset zip file.  Be sure to allow it to unzip all of the files in the $BASE 
+directory, and be sure to set the Path mode to "Full pathnames" to preserve the directory 
+structure of the zip file.
 
-3. In R change the working directory to be the "UCI HAR Dataset" directory created by unzipping the data file.
-Use the following command in R:
+3. In R change the working directory to be the "UCI HAR Dataset" directory created by unzip-
+ping the data file.  Use the following command in R:
 
 > setwd("$BASE/getdata_projectfiles/UCI HAR Dataset")
 
-Be sure to replace $BASE with the actual path to the directory where you unzipped the data file.
+Be sure to replace $BASE with the actual path to the directory where you unzipped the data 
+file.
 
 4. Source the run_analysis.R script.
 
-5. Be sure that the "reshape2" package has been installed in your instance of R.  If it has not, you must
-install it, or the script will not fully run.
+5. Be sure that the "reshape2" package has been installed in your instance of R.  If it has 
+not, you must install it, or the script will not fully run.
 
-6. Create the tidy data set from the raw data in the zip file by executing the following command:
+6. Create the tidy data set from the raw data in the zip file by executing the following 
+command:
 
 > tidy_df <- CreateTidyDF()
 
 A dataframe containing the tidy data set will be returned from CreateTidyDF().
 
-7. Create the tidy data set of means of each of the variables in the tidy data frame created in the last step
-by executing the following command:
+7. Create the tidy data set of means of each of the variables in the tidy data frame created 
+in the last step by executing the following command:
 
 > tidy_mean_df <- CreateMeanDF( tidy_df )
 
-Note that the tidy data frame created by CreateTidyDF() must be passed into CreateMeanDF as an argument.  The
-table created by CreateMeanDF is what is stored in the tidy_mean_dataset.txt file included in the GitHub
-repository.
+Note that the tidy data frame created by CreateTidyDF() must be passed into CreateMeanDF as 
+an argument.  The table created by CreateMeanDF is what is stored in the tidy_mean_dataset.txt 
+file included in the GitHub repository.
 
 Loading the Tidy Mean Dataset into R from the tidy_mean_dataset.txt file
 ------------------------------------------------------------------------
